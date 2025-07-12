@@ -8,32 +8,62 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #fff;
-      color: #333;
+      background: #000;
+      color: #fff;
     }
     header {
-      background: #ff6b00;
-      color: white;
+      background: #000;
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px 60px;
     }
     h1 {
-      font-size: 36px;
+      font-size: 48px;
       margin: 0;
+      animation: fadeScale 2s ease-in-out forwards;
+      opacity: 0;
     }
+    @keyframes fadeScale {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
     .tagline {
-      font-size: 18px;
-      margin-top: 10px;
+      font-size: 20px;
+      color: #ff6b00;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #ff6b00;
+      width: 0;
+      animation: typing 4s steps(60, end) forwards, blink 0.75s step-end infinite;
+      margin-top: 20px;
     }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
     section {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
+
     h2 {
       color: #ff6b00;
       font-size: 28px;
     }
+
     .btn {
       display: inline-block;
       background: #ff6b00;
@@ -43,33 +73,81 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      transition: transform 0.3s;
     }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #e35d00;
+    }
+
     footer {
-      background: #f2f2f2;
+      background: #111;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
       font-size: 14px;
+      color: #ccc;
     }
+
     form {
       margin-top: 20px;
       display: flex;
       flex-direction: column;
     }
+
     input, textarea {
       padding: 10px;
       margin-bottom: 12px;
       border-radius: 5px;
-      border: 1px solid #ccc;
+      border: 1px solid #444;
+      background: #111;
+      color: #fff;
     }
+
+    input::placeholder, textarea::placeholder {
+      color: #888;
+    }
+
     input[type="submit"] {
       background: #ff6b00;
       color: white;
       border: none;
       cursor: pointer;
     }
+
     input[type="submit"]:hover {
       background: #e35d00;
+    }
+
+    a {
+      color: #ff6b00;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .product-image {
+      text-align: center;
+      margin-top: 30px;
+      animation: fadeInUp 2s ease-in-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .product-image img {
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -87,16 +165,23 @@
 
   <section>
     <h2>My Product</h2>
-    <p><strong>100 Premium AI Prompts</strong><br> For Website, E-commerce & Productivity – just $4</p>
-    <a href="https://aiwithaman.gumroad.com" class="btn">Buy on Gumroad</a>
+    <p><strong>100 Premium AI Prompts</strong><br> For Website, E-commerce & Productivity â€“ <strong style="color:#ff6b00;">Only $4</strong></p>
+
+    <div class="product-image">
+      <img src="/mnt/data/1752264837742.jpg" alt="100 Premium Prompts Bundle">
+    </div>
+
+    <a href="https://aiwithaman.gumroad.com" class="btn" target="_blank">Buy on Gumroad</a>
   </section>
 
   <section>
     <h2>Contact</h2>
-    <p>Instagram: <a href="https://instagram.com/promptwithaman" target="_blank">@promptwithaman</a><br>
-       Facebook: <a href="https://facebook.com/aiwithaman" target="_blank">@aiwithaman</a></p>
+    <p>
+      Instagram: <a href="https://instagram.com/aiwithaman" target="_blank">@aiwithaman</a><br>
+      Facebook: <a href="https://facebook.com/aiwithaman" target="_blank">@aiwithaman</a>
+    </p>
 
-    <!-- ? Netlify-Compatible Form -->
+    <!-- âœ… Netlify-Compatible Form -->
     <form name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact">
       <input type="text" name="name" placeholder="Your Name" required />
@@ -107,7 +192,7 @@
   </section>
 
   <footer>
-    © 2025 AIwithAman. All rights reserved.
+    Â© 2025 AIwithAman. All rights reserved.
   </footer>
 
 </body>
