@@ -3,36 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AIwithAman – Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>AIwithAman | Prompt Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+    header {
+      background: #ff6b00;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    .tagline {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #ff6b00;
+      font-size: 28px;
+    }
+    .btn {
+      display: inline-block;
+      background: #ff6b00;
+      color: white;
+      padding: 12px 24px;
+      margin-top: 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      background: #f2f2f2;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      background: #ff6b00;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background: #e35d00;
+    }
+  </style>
 </head>
 <body>
 
-  <header class="hero">
+  <header>
     <h1>AIwithAman</h1>
-    <p>Helping creators & freelancers with powerful AI prompts ??</p>
+    <p class="tagline">Helping creators & freelancers with powerful AI prompts</p>
   </header>
 
-  <section class="about">
+  <section>
     <h2>About Me</h2>
-    <p>Hi! I'm Aman Hakim, the creator behind AIwithAman. I design prompt bundles and help freelancers use AI to grow online.</p>
+    <p>Hi! I'm Aman Hakim, the creator behind <strong>AIwithAman</strong>. I design prompt bundles and help freelancers use AI to grow online.</p>
   </section>
 
-  <section class="product">
-    <h2>?? My Product</h2>
-    <p><strong>100 Premium AI Prompts</strong><br>
-    For Website, E-commerce & Productivity – just $4</p>
-    <a href="https://aiwithaman.gumroad.com/l/ugcxk" class="btn" target="_blank">Buy on Gumroad</a>
+  <section>
+    <h2>My Product</h2>
+    <p><strong>100 Premium AI Prompts</strong><br> For Website, E-commerce & Productivity – just $4</p>
+    <a href="https://aiwithaman.gumroad.com" class="btn">Buy on Gumroad</a>
   </section>
 
-  <section class="contact">
-    <h2>?? Contact</h2>
-    <p>?? Instagram: <a href="https://instagram.com/aiwithaman" target="_blank">@aiwithaman</a></p>
-    <p>?? Facebook: <a href="https://facebook.com" target="_blank">Coming Soon</a></p>
+  <section>
+    <h2>Contact</h2>
+    <p>Instagram: <a href="https://instagram.com/aiwithaman" target="_blank">@aiwithaman</a><br>
+       Facebook: <a href="https://facebook.com/aiwithaman" target="_blank">@aiwithaman</a></p>
+
+    <form action="https://formspree.io/f/yourformID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <input type="submit" value="Send Message" />
+    </form>
   </section>
 
   <footer>
-    <p>© 2025 AIwithAman. All rights reserved.</p>
+    © 2025 AIwithAman. All rights reserved.
   </footer>
 
 </body>
