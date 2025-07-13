@@ -1,17 +1,201 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Smart Move Landing Page</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>AIwithAman | Premium Prompts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #0d0d0d;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0fffc1, #00aaff);
+      color: black;
+      text-align: center;
+      padding: 80px 20px 60px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin: 0;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00f0ff; }
+      to { text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff; }
+    }
+
+    .tagline {
+      font-size: 20px;
+      color: #000;
+      margin-top: 15px;
+    }
+
+    .typing::after {
+      content: '|';
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #0fffc1;
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00aaff;
+      color: white;
+      padding: 14px 30px;
+      margin-top: 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0077cc;
+    }
+
+    .product-card {
+      margin-top: 30px;
+      background: #1c1c1c;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      padding: 20px;
+      text-align: center;
+      transform: perspective(800px) rotateY(0deg);
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover {
+      transform: perspective(800px) rotateY(5deg);
+    }
+
+    .product-card img { src="https://raw.githubusercontent.com/openai/chatgpt-assets/main/aiwithaman-book.jpg" alt="Prompt Book">
+      max-width: 300px;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    form {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      padding: 12px;
+      margin-bottom: 14px;
+      border-radius: 5px;
+      border: 1px solid #333;
+      background: #222;
+      color: #fff;
+    }
+
+    input[type="submit"] {
+      background: #00aaff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background: #0077cc;
+    }
+  </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="overlay">
-      <h1>Take your <span>Smart move</span><br>to your <span>Smart Work!</span></h1>
+
+  <header>
+    <h1 id="typingTitle"></h1>
+    <p class="tagline">Helping creators & freelancers with powerful AI prompts</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>Hi! I'm Aman Hakim, the creator behind <strong>AIwithAman</strong>. I design prompt bundles and help freelancers use AI to grow online.</p>
+  </section>
+
+  <section>
+    <h2>My Product</h2>
+    <p><strong>100 Premium AI Prompts</strong> – For Website, E-commerce & Productivity – just $4</p>
+    
+    <div class="product-card">
+      <img src="https://raw.githubusercontent.com/openai/chatgpt-assets/main/aiwithaman-book.jpg" alt="Prompt Book">
+      <br />
+      <a href="https://aiwithaman.gumroad.com" class="btn">Buy on Gumroad</a>
     </div>
   </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      Instagram: <a href="https://instagram.com/promptwithaman" target="_blank">@promptwithaman</a><br>
+      Facebook: <a href="https://facebook.com/aiwithaman" target="_blank">@aiwithaman</a>
+    </p>
+
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <input type="submit" value="Send Message" />
+    </form>
+  </section>
+
+  <footer>
+    © 2025 AIwithAman. All rights reserved.
+  </footer>
+
+  <script>
+    const text = "AIwithAman";
+    let i = 0;
+    const speed = 150;
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typingTitle").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
