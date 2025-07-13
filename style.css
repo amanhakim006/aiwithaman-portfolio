@@ -1,57 +1,38 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
+/* style.css */
+* {
   margin: 0;
   padding: 0;
-  background: #fdfdfd;
-  color: #333;
-  line-height: 1.6;
+  box-sizing: border-box;
 }
 
-header.hero {
-  background: #ff6a00;
-  color: #fff;
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.hero {
+  background-image: url('bg.jpg'); /* Replace with background if needed */
+  background-color: #1e1e1e; /* fallback color */
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 60px 20px;
+  padding: 1rem;
 }
 
-.hero h1 {
+.overlay h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
+  line-height: 1.2;
 }
 
-.hero p {
-  font-size: 1.2rem;
+.overlay span {
+  color: orange;
 }
 
-section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #ff6a00;
-}
-
-.btn {
-  display: inline-block;
-  background: #ff6a00;
-  color: #fff;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-.btn:hover {
-  background: #e65c00;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #f2f2f2;
-  color: #666;
+@media (max-width: 600px) {
+  .overlay h1 {
+    font-size: 2rem;
+  }
 }
